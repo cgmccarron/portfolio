@@ -164,3 +164,9 @@ a {
   display: inline-block;
   font-weight: bold;
 }
+
+.projects-container {
+  background: var(--bg-accent);
+  height: 100vh;
+  color: var(--text-color);
+}

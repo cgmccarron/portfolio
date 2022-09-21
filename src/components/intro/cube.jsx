@@ -1,6 +1,7 @@
 import React from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+import Spheres from "../projects/spheres";
 
 const Box = () => {
   return (
@@ -14,10 +15,9 @@ const Box = () => {
 const Cube = () => {
   return (
     <Canvas>
-      <OrbitControls />
       <ambientLight intensity={0.5} />
-      <spotLight position={[10, 15, 10]} angle={0.3} />
-      <Box />
+      <directionalLight position={[-2, 5, 2]} intensity={1} />
+      <Spheres />
     </Canvas>
   );
 };
