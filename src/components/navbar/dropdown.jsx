@@ -7,6 +7,12 @@ import { GiOfficeChair } from "react-icons/gi";
 
 const Dropdown = () => {
   const [activeMenu, setActiveMenu] = useState("main");
+  const [menuHeight, setMenuHeight] = useState(null);
+
+  const calcHeight = (el) => {
+    const height = el.offsetHeight;
+    setMenuHeight(height);
+  };
 
   function DropdownItem(props) {
     return (
@@ -23,12 +29,13 @@ const Dropdown = () => {
   }
 
   return (
-    <div className="dropdown">
+    <div className="dropdown" style={{ height: menuHeight }}>
       <CSSTransition
         in={activeMenu === "main"}
         unmountOnExit
         timeout={500}
         classNames="menu-primary"
+        onEnter={calcHeight}
       >
         <div className="menu">
           <DropdownItem leftIcon={<AiFillGithub />}>My Github</DropdownItem>
@@ -47,6 +54,7 @@ const Dropdown = () => {
         unmountOnExit
         timeout={500}
         classNames="menu-secondary"
+        onEnter={calcHeight}
       >
         <div className="menu">
           <DropdownItem leftIcon={<AiFillGithub />} goToMenu="main">
@@ -54,6 +62,8 @@ const Dropdown = () => {
           </DropdownItem>
           <DropdownItem leftIcon={<AiFillGithub />}>Calculator</DropdownItem>
           <DropdownItem leftIcon={<AiFillGithub />}>Etch-a-Sketch</DropdownItem>
+          <DropdownItem leftIcon={<AiFillGithub />}>Signup Form</DropdownItem>
+          <DropdownItem leftIcon={<AiFillGithub />}>Games</DropdownItem>
         </div>
       </CSSTransition>
     </div>
