@@ -165,8 +165,20 @@ a {
   font-weight: bold;
 }
 
-.projects-container {
-  background: var(--bg-accent);
+.canvas-container {
   height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-accent);
+  overflow: visible;
+}
+
+.projects-container {
   color: var(--text-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
