@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;900&display=swap");
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --bg: #242526;
   --bg-accent: #48414d;
