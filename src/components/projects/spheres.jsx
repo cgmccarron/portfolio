@@ -13,7 +13,7 @@ const Spheres = (props) => {
     }
   };
   useFrame(() =>
-    heightLimit(sphereRef.current.position.y)
+    sphereRef.current.position.y < 5.5
       ? (sphereRef.current.position.y += props.speed)
       : (sphereRef.current.position.y = -5)
   );
@@ -24,7 +24,7 @@ const Spheres = (props) => {
       visable
       args={[1, 100, 100]}
       scale={0.5}
-      position={[props.x, -4, props.z]}
+      position={[props.x, props.y, props.z]}
     >
       <MeshDistortMaterial
         color={props.color}

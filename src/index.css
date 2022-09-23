@@ -182,3 +182,25 @@ a {
   justify-content: center;
   padding: 1rem;
 }
+
+.card-button {
+  border: none;
+  color: var(--text-color);
+  border-radius: 8rem;
+  color: var(--bg);
+  cursor: pointer;
+  width: 4rem;
+  font-weight: bold;
+}
+
+#info {
+  background-color: #48bf91;
+}
+
+#demo {
+  background-color: #0076be;
+}
+
+#github {
+  background-color: #4db4d7;
+}
