@@ -8,7 +8,18 @@ import { AnimatePresence } from "framer-motion";
 
 const Projects = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const toggleModal = () => setModalOpen(!modalOpen);
+  const [selectedProject, setSelectedProject] = useState("unselected");
+  const toggleModal = (value) => {
+    setModalOpen(!modalOpen);
+    if (value) {
+      setSelectedProject(value);
+    }
+  };
+
+  const infoBlurbs = {
+    calculator:
+      "This is a project from the Odin Project that required me to use html/css and javascript to build a calculator in the browser. I had to focus on learning objects in js to make this project work. At the time it was one of my best looking projects and I even included a light and dark mode",
+  };
 
   return (
     <div className="canvas-container" id="projects">
@@ -30,7 +41,7 @@ const Projects = () => {
             imgSource="src\assets\images\odin-calculator.PNG"
             title="Odin Calculator"
             description="A calculator made with JS and HTML/Css"
-            handleModal={toggleModal}
+            handleModal={() => toggleModal("calculator")}
           />
           <Card
             imgSource="src\assets\images\odin-ticTacToe.PNG"
@@ -55,16 +66,12 @@ const Projects = () => {
         <ambientLight intensity={0.5} />
         <directionalLight position={[1, 2, 2]} intensity={1} />
       </Canvas>
-      <AnimatePresence
-        intial={false}
-        exitBeforeEnter={true}
-        onExitComplete={() => null}
-      >
+      <AnimatePresence intial={false} mode="wait" onExitComplete={() => null}>
         {modalOpen && (
           <Modal
             modalOpen={modalOpen}
             handleClose={toggleModal}
-            text="This is a model"
+            text={infoBlurbs[selectedProject]}
           />
         )}
       </AnimatePresence>
