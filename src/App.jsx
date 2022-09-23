@@ -10,6 +10,7 @@ import { FaBolt } from "react-icons/fa";
 import Intro from "./pages/intro";
 import Projects from "./pages/projects";
 import About from "./pages/about";
+import Contact from "./pages/contact";
 
 function App() {
   return (
@@ -19,11 +20,12 @@ function App() {
           <Dropdown />
         </Navitem>
         <Navitem icon={<SiAboutdotme />} link="#about" />
-        <Navitem icon={<BiMessageDetail />} />
+        <Navitem icon={<BiMessageDetail />} link="#contact" />
       </Navbar>
       <Intro />
       <Projects />
       <About />
+      <Contact />
     </div>
   );
 }
