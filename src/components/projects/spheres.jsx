@@ -5,13 +5,6 @@ import { useFrame } from "@react-three/fiber";
 const Spheres = (props) => {
   const sphereRef = useRef();
 
-  const heightLimit = (y) => {
-    if (y < 5.5) {
-      return true;
-    } else {
-      return false;
-    }
-  };
   useFrame(() =>
     sphereRef.current.position.y < 5.5
       ? (sphereRef.current.position.y += props.speed)

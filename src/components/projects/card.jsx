@@ -1,7 +1,6 @@
-import { AspectRatio, CardOverflow, Typography, Box } from "@mui/joy";
-import Button from "@mui/joy/Button";
+import { AspectRatio, CardOverflow, Typography } from "@mui/joy";
+import { motion } from "framer-motion";
 import Card from "@mui/joy/Card";
-import * as React from "react";
 
 const ProjectCard = (props) => {
   const alert = () => {
@@ -9,7 +8,7 @@ const ProjectCard = (props) => {
   };
 
   return (
-    <Card sx={{ minWidth: 100, maxWidth: 350, bgcolor: "var(--bg)" }}>
+    <Card sx={{ width: 300, bgcolor: "var(--bg)" }}>
       <CardOverflow>
         <AspectRatio ratio="2">
           <img src={props.imgSource} alt="" />
@@ -33,15 +32,31 @@ const ProjectCard = (props) => {
           justifyContent: "space-around",
         }}
       >
-        <button className="card-button" id="info" onClick={alert}>
+        <motion.button
+          className="card-button"
+          id="info"
+          onClick={props.handleModal}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
           Info
-        </button>
-        <button className="card-button" id="demo">
+        </motion.button>
+        <motion.button
+          className="card-button"
+          id="demo"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
           <a href="https://www.theodinproject.com/">Demo</a>
-        </button>
-        <button className="card-button" id="github">
+        </motion.button>
+        <motion.button
+          className="card-button"
+          id="github"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
           Github
-        </button>
+        </motion.button>
       </CardOverflow>
     </Card>
   );
