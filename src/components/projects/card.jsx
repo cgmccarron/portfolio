@@ -30,13 +30,14 @@ const ProjectCard = (props) => {
           display: "flex",
           gap: 1.5,
           py: 1.5,
+          justifyContent: "space-around",
         }}
       >
         <button className="card-button" id="info" onClick={alert}>
           Info
         </button>
         <button className="card-button" id="demo">
-          Demo
+          <a href="https://www.theodinproject.com/">Demo</a>
         </button>
         <button className="card-button" id="github">
           Github

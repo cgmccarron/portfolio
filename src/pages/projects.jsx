@@ -5,7 +5,7 @@ import Card from "../components/projects/card";
 
 const Projects = () => {
   return (
-    <div className="canvas-container">
+    <div className="canvas-container" id="projects">
       <Canvas className="canvas">
         <Spheres color="#48BF91" x={-0.3} z={0} y={-6} speed={0.019} />
         <Spheres color="#4DB4D7" x={-3} z={-1} y={-4} speed={0.021} />
