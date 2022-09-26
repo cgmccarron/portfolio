@@ -273,6 +273,57 @@ a {
 }
 
 #contact {
-  height: 50vh;
-  background-color: var(--bg-accent);
+  height: 60vh;
+  background-color: var(--bg);
+  color: var(--text-color);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  border-top: var(--border);
+  border-color: #4db4d7;
+  overflow: hidden;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.contact-form > * {
+  background-color: var(--text-color);
+  color: var(--bg-accent);
+  border: var(--border);
+  border-color: #0076be;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  margin-inline: 1rem;
+}
+
+.contact-form > *:focus {
+  border: var(--border);
+  border-color: #4db4d7;
+  color: var(--bg);
+  filter: brightness(1.3);
+  outline: solid #4db4d7;
+}
+
+.contact-title {
+  grid-column: 1/3;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.contact-text-area {
+  height: 5rem;
+}
+
+.contact-card {
+  height: 10rem;
+  width: 25rem;
+  text-align: center;
+  border: var(--border);
+  border-color: #0076be;
+  border-radius: var(--border-radius);
 }

@@ -8,6 +8,7 @@ import { BiMessageDetail } from "react-icons/bi";
 import { FaBolt } from "react-icons/fa";
 
 import Intro from "./pages/intro";
+import NewProjects from "./pages/newProject";
 import Projects from "./pages/projects";
 import About from "./pages/about";
 import Contact from "./pages/contact";
@@ -23,7 +24,7 @@ function App() {
         <Navitem icon={<BiMessageDetail />} link="#contact" />
       </Navbar>
       <Intro />
-      <Projects />
+      <NewProjects />
       <About />
       <Contact />
     </div>

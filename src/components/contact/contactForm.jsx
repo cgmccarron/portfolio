@@ -27,15 +27,19 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contact-form">
-      <form onSubmit={sendEmail} ref={form}>
-        <input type="text" name="name" placeholder="Name" />
-        <input type="text" name="email" placeholder="Email" />
-        <input type="text" name="subject" placeholder="Subject" />
-        <input type="text" name="message" placeholder="Message" />
-        <input type="submit" />
-      </form>
-    </div>
+    <form onSubmit={sendEmail} ref={form} className="contact-form">
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="text" name="email" placeholder="Email" required />
+      <input type="text" name="subject" placeholder="Subject" required />
+      <textarea
+        type="text"
+        name="message"
+        placeholder="Message"
+        className="contact-text-area"
+        required
+      />
+      <input type="submit" />
+    </form>
   );
 };
 
