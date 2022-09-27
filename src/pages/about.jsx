@@ -1,6 +1,7 @@
 import { motion, useAnimation } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import Skills from "../components/about/skill";
 
 const About = () => {
   const { ref, inView } = useInView();
@@ -11,7 +12,7 @@ const About = () => {
       animation.start({
         x: 0,
         transition: {
-          duration: 1,
+          duration: 2,
           type: "spring",
           bounce: 0.3,
         },
@@ -20,23 +21,12 @@ const About = () => {
     if (!inView) {
       animation.start({ x: "100vw" });
     }
-    console.log("use in view = ", inView);
   }, [inView]);
 
   return (
     <div id="about">
-      <h1 className="about-me-h1">who i am</h1>
-      <div className="skills-div">
-        <h2>skills</h2>
-        <ul>
-          <li>javascript</li>
-          <li>html and css</li>
-          <li>python</li>
-          <li>java</li>
-          <li>React.js</li>
-          <li>A great attitude</li>
-        </ul>
-      </div>
+      <h1 className="about-me-h1">A little bit about me</h1>
+      <Skills />
       <div ref={ref} className="about-me-container">
         <motion.div animate={animation} className="about-me-text">
           I have taken college courses for Computer Science. Although I did not
