@@ -8,38 +8,46 @@ title: Little Planet Earth
 
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 
 export function Earth(props) {
+  const xAxis = 0.4;
+  const earth = useRef();
+
+  useFrame(() => {
+    earth.current.rotation.y += 0.005;
+  });
+
   const { nodes, materials } = useGLTF("/scene.gltf");
   return (
-    <group {...props} dispose={null}>
+    <group ref={earth} {...props} dispose={null} rotation={[0, 0, 0]}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
-          <group position={[0, 0, -500]}>
+          <group position={[0, 0, 0]}>
             <mesh
               geometry={nodes.Clouds_2_Clouds_1.geometry}
               material={materials.Clouds}
             />
           </group>
-          <group position={[0, 0, -500]}>
+          <group position={[0, 0, 0]}>
             <mesh
               geometry={nodes.Ocean_Mat_0.geometry}
               material={materials.material}
             />
           </group>
-          <group position={[-64.3, 10.84, -5]}>
+          <group position={[-64.3, 10.84, 495]}>
             <mesh
               geometry={nodes.CONT_Extrude_Mat3_0.geometry}
               material={materials["Mat.3"]}
             />
           </group>
-          <group position={[0, 500, -500]}>
+          <group position={[0, 500, 0]}>
             <mesh
               geometry={nodes.SP_Extrude_Ice_0.geometry}
               material={materials.material_3}
             />
           </group>
-          <group position={[0, -500, -500]}>
+          <group position={[0, -500, 0]}>
             <mesh
               geometry={nodes.NP_Extrude_Ice_0.geometry}
               material={materials.material_3}
