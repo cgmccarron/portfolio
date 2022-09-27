@@ -30,7 +30,7 @@ const NewProjects = () => {
   return (
     <div
       className="projects-container"
-      style={{ background: "var(--bg)" }}
+      style={{ background: "var(--bg-accent)" }}
       id="projects"
     >
       <Card
