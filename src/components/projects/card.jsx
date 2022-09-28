@@ -8,7 +8,7 @@ const ProjectCard = (props) => {
   };
 
   return (
-    <Card sx={{ width: 300, bgcolor: "var(--bg)" }}>
+    <Card sx={{ width: 300, bgcolor: "var(--bg)" }} className="card-tile">
       <CardOverflow>
         <AspectRatio ratio="2">
           <img src={props.imgSource} alt="" />
